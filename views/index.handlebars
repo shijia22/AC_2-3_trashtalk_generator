@@ -10,7 +10,7 @@
         />
         <div class='card-body m-2'>
 
-          <input type='radio' name='engineer' id='engineer' value='engineer' />
+          <input type='radio' name='person' id='engineer' value='engineer' />
           <label for='engineer'>
             工程師
           </label>
@@ -25,7 +25,7 @@
         />
         <div class='card-body m-2'>
 
-          <input type='radio' name='designer' id='designer' value='designer' />
+          <input type='radio' name='person' id='designer' value='designer' />
           <label for='designer'>
             設計師
           </label>
@@ -42,7 +42,7 @@
 
           <input
             type='radio'
-            name='entrepreneur'
+            name='person'
             id='entrepreneur'
             value='entrepreneur'
           />
@@ -56,12 +56,11 @@
 
     <div class='form-group d-flex align-items-center p-3'>
       <button type='submit' class='btn btn-primary mb-2'>產生幹話</button>
-      <textarea
-        class='form-control'
-        id='exampleFormControlTextarea1'
-        rows='3'
-      ></textarea>
-    </div>
 
+      <textarea class='form-control' id='talkOutput' rows='3'>
+        {{#if talk}}
+          一句話惹怒：{{talk}}
+        {{/if}}</textarea>
+    </div>
   </form>
 </div>

@@ -16,7 +16,7 @@ function generateTrash(options) {
   let collection = ''
 
   if (options.person === 'engineer') {
-    collection = '身為工程師'
+    collection = '一句話惹怒：身為工程師'
     collection += task.engineer[sample(task.engineer)]
     collection += phrase[sample(phrase)]
     collection += '吧'
@@ -24,19 +24,23 @@ function generateTrash(options) {
   }
 
   if (options.person === 'designer') {
-    collection = '身為設計師'
+    collection = '一句話惹怒：身為設計師'
     collection += task.designer[sample(task.designer)]
     collection += phrase[sample(phrase)]
     collection += '吧'
     return collection
   }
 
-    if (options.person === 'entrepreneur') {
-      collection = '身為創業家'
-      collection += task.entrepreneur[sample(task.entrepreneur)]
-      collection += phrase[sample(phrase)]
-      collection += '吧'
-      return collection
-    }
+  if (options.person === 'entrepreneur') {
+    collection = '一句話惹怒：身為創業家'
+    collection += task.entrepreneur[sample(task.entrepreneur)]
+    collection += phrase[sample(phrase)]
+    collection += '吧'
+    return collection
+  }
+  // return error notice if collection is empty
+  if (collection.length === 0) {
+    return 'There is no valid character in your selection.'
+  }
 }
 module.exports = generateTrash
